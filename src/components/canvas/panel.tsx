@@ -7,7 +7,7 @@ import ColorInput from './input'
 
 const Panel: React.SFC = () => {
   const max = 400, min = 0
-  const defaultRectInfo = [0, 0, 300, 300]
+  const defaultRectInfo = [100, 100, 200, 200]
   const [fillColor, setFillColor] = useState('000')
   const [rectInfo, setRectInfo] = useState(defaultRectInfo)
 
