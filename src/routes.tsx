@@ -5,8 +5,8 @@ import { Global } from '@emotion/core'
 import Root from './components/layout/Root'
 import Header from './components/layout/Header'
 import IndexPage from './pages/index'
-import HeroesPage from './pages/heroes'
-import TeamsPage from './pages/teams'
+import CanvasPage from './pages/canvas/index'
+import PolygonPage from './pages/polygon'
 import normalize from './styles/normalize'
 import globals from './styles/globals'
 
@@ -26,8 +26,8 @@ const Routes: React.SFC = () => (
     <Header title="Example App" />
     <Switch>
       <Route exact path="/" component={IndexPage} />
-      <Route path="/heroes" component={HeroesPage} />
-      <Route path="/teams" component={TeamsPage} />
+      <Route path="/canvas" component={CanvasPage} />
+      <Route path="/polygon" component={PolygonPage} />
       <Route component={() => <div>Not Found</div>} />
     </Switch>
   </Root>
