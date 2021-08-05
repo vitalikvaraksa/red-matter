@@ -18,8 +18,11 @@ const Panel: React.SFC = () => {
     const height = Math.floor(Math.random() * (max - posY + 1)) + min;
 
     const newRectInfo = [posX, posY, width, height]
-    console.log(newRectInfo)
     setRectInfo(newRectInfo)
+  }
+
+  const changeRect = (rectInfo: any) => {
+    setRectInfo(rectInfo)
   }
 
   const onChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -28,7 +31,7 @@ const Panel: React.SFC = () => {
 
   return (
     <PanelContainer>
-      <Canvas rectInfo={rectInfo} fillColor={fillColor} />
+      <Canvas rectInfo={rectInfo} fillColor={fillColor} changeRect={changeRect} />
       <DrawButton children='Draw Rectangle' onClick={onClick} />
       <ColorInput name='color' label='Input fill color: ' onChange={onChange} />
     </PanelContainer>
