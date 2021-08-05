@@ -2,9 +2,6 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { RouteComponentProps, Route, Switch } from 'react-router-dom'
 
-import TeamsIndexPage from './teams/index'
-import ShowTeamsPage from './teams/show'
-
 import { ApplicationState } from '../store'
 
 // Separate state props + dispatch props to their own interfaces.
@@ -18,10 +15,7 @@ type AllProps = PropsFromState & RouteComponentProps
 
 const TeamsPage: React.FC<AllProps> = ({ match }) => {
   return (
-    <Switch>
-      <Route exact path={`${match.path}/`} component={TeamsIndexPage} />
-      <Route path={`${match.path}/:id`} component={ShowTeamsPage} />
-    </Switch>
+    <></>
   )
 }
 
