@@ -5,13 +5,13 @@ import { History } from 'history'
 
 import { LayoutState, layoutReducer } from './layout'
 
-import { TeamsState } from './teams/types'
-import { teamsReducer } from './teams/reducer'
+import { polygonState } from './polygon/types'
+import { polygonReducer } from './polygon/reducer'
 
 // The top-level state object
 export interface ApplicationState {
   layout: LayoutState
-  teams: TeamsState
+  polygon: polygonState
   router: RouterState
 }
 
@@ -21,7 +21,7 @@ export interface ApplicationState {
 export const createRootReducer = (history: History) =>
   combineReducers({
     layout: layoutReducer,
-    teams: teamsReducer,
+    polygon: polygonReducer,
     router: connectRouter(history)
   })
 
