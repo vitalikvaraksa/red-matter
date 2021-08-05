@@ -5,7 +5,6 @@ import { History } from 'history'
 
 import { LayoutState, layoutReducer } from './layout'
 
-import teamsSaga from './teams/sagas'
 import { TeamsState } from './teams/types'
 import { teamsReducer } from './teams/reducer'
 
@@ -30,5 +29,5 @@ export const createRootReducer = (history: History) =>
 // "generator function", which you can read about here:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
 export function* rootSaga() {
-  yield all([fork(teamsSaga)])
+  yield all([])
 }
