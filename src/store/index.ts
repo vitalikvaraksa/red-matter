@@ -5,9 +5,6 @@ import { History } from 'history'
 
 import { LayoutState, layoutReducer } from './layout'
 
-import heroesSaga from './heroes/sagas'
-import { heroesReducer } from './heroes/reducer'
-import { HeroesState } from './heroes/types'
 import teamsSaga from './teams/sagas'
 import { TeamsState } from './teams/types'
 import { teamsReducer } from './teams/reducer'
@@ -15,7 +12,6 @@ import { teamsReducer } from './teams/reducer'
 // The top-level state object
 export interface ApplicationState {
   layout: LayoutState
-  heroes: HeroesState
   teams: TeamsState
   router: RouterState
 }
@@ -26,7 +22,6 @@ export interface ApplicationState {
 export const createRootReducer = (history: History) =>
   combineReducers({
     layout: layoutReducer,
-    heroes: heroesReducer,
     teams: teamsReducer,
     router: connectRouter(history)
   })
@@ -35,5 +30,5 @@ export const createRootReducer = (history: History) =>
 // "generator function", which you can read about here:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
 export function* rootSaga() {
-  yield all([fork(heroesSaga), fork(teamsSaga)])
+  yield all([fork(teamsSaga)])
 }
