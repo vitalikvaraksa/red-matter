@@ -1,4 +1,4 @@
 export interface polygonState {
-  readonly events: [],
-  readonly gate: []
+  events: [Number, Number, Number, Number][],
+  gate: [Number, Number][]
 }

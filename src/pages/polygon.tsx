@@ -6,11 +6,11 @@ import { ApplicationState } from '../store'
 
 // Separate state props + dispatch props to their own interfaces.
 interface PropsFromState {
-  events: []
-  gate: []
+  events: [Number, Number, Number, Number][],
+  gate: [Number, Number][]
 }
 
-const TeamsPage: React.FC<PropsFromState> = ({ events, gate }) => {
+const polygonPage: React.FC<PropsFromState> = ({ events, gate }) => {
   return (
     <></>
   )
@@ -26,4 +26,4 @@ const mapStateToProps = ({ polygon }: ApplicationState) => ({
 
 // Now let's connect our component!
 // With redux v4's improved typings, we can finally omit generics here.
-export default connect(mapStateToProps)(TeamsPage)
+export default connect(mapStateToProps)(polygonPage)
