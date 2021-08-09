@@ -1,4 +1,4 @@
 export interface polygonState {
-  events: [Number, Number, Number, Number][],
-  gate: [Number, Number][]
+  events: [number, number, number, number][],
+  gate: [number, number][]
 }

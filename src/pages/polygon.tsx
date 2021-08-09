@@ -1,18 +1,17 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { RouteComponentProps, Route, Switch } from 'react-router-dom'
-
+import Polygon from '../components/polygon'
 import { ApplicationState } from '../store'
 
 // Separate state props + dispatch props to their own interfaces.
 interface PropsFromState {
-  events: [Number, Number, Number, Number][],
-  gate: [Number, Number][]
+  events: [number, number, number, number][],
+  gate: [number, number][]
 }
 
-const polygonPage: React.FC<PropsFromState> = ({ events, gate }) => {
+const polygonPage: React.FC<PropsFromState> = (props) => {
   return (
-    <></>
+    <Polygon {...props} />
   )
 }
 
